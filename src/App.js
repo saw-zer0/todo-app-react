@@ -64,9 +64,9 @@ class App extends Component {
           inputValue={this.state.inputValue}
           updateInputField={this.updateInputField}
         />
-        <div className="row mx-auto my-3 w-75">
-          <div className="col border border-2 m-3 ">
-            <h2>tasks</h2>
+        <div className="row mx-auto my-3 w-75" style={{minHeight: "25vh"}}>
+          <div className="col border border-2 m-3 bg-info">
+            <h2 className="border border-3 m-3 bg-white">tasks</h2>
             <ul>
               {this.state.todoList
                 .filter(task => !task.done)
@@ -81,8 +81,8 @@ class App extends Component {
               }
             </ul>
           </div>
-          <div className="col border border-2 m-3">
-            <h2>completed</h2>
+          <div className="col border border-2 m-3 bg-success">
+            <h2 className="border border-3 m-3 bg-white">completed</h2>
             <ul >
               {this.state.todoList
                 .filter(task => task.done)
