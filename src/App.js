@@ -15,7 +15,6 @@ class App extends Component {
   render() {
 
     const {todoList } = this.props
-    console.log(this.props)
     return (
       <div className="container">
         <h1 className="text-center">Todo App</h1>

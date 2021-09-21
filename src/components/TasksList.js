@@ -6,12 +6,10 @@ import {mapStateToProps, mapDispatchToProps} from "../utils"
 class TaskList extends Component {
     render() {
         const { updateCheckbox, task, removeFromList } = this.props
-        console.log(updateCheckbox)
         return (
             <>
                 <li style={{listStyle: "none"}} className="row p-1 m-1 border bg-secondary text-light">
                     <label className="col">
-                        {console.log("task",task, this.props)}
                         <input
                             type="checkbox"
                             checked={task.done}

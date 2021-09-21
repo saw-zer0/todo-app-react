@@ -17,7 +17,7 @@ const todoReducer = (state, action) => {
 
     case "UPDATE_CHECKBOX":
       const taskid = action.taskid;
-      let todo = state.todoList;
+      const todo = JSON.parse(JSON.stringify(state.todoList));//make a hard copy, todo=state.todoList only makes soft copy
       todo[taskid - 1].done = action.e.target.checked;
       return {...state, todoList: todo};
 
@@ -29,11 +29,11 @@ const todoReducer = (state, action) => {
         done: false
       };
       tempTodo = [...state.todoList, task]
-      return {...state, todoList: tempTodo}
+      return {...state, todoList: tempTodo, inputValue: ""}
 
     case "REMOVE_FROM_LIST":
-      tempTodo = state.todoList
-      tempTodo.splice(action.taskid,1)
+      tempTodo = JSON.parse(JSON.stringify(state.todoList));
+      tempTodo.splice(action.taskid - 1 ,1)
       return {...state, todoList:tempTodo}
 
     default:
